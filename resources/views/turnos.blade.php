@@ -317,7 +317,7 @@
 
                             </fieldset>
                             <!--<input type="submit" class="submit" id="submit" value="Siguiente" />-->
-                            <a href="{{route('generadorTurnos')}}" class="btn btn-danger"> Siguiente </a>
+                            <button type="submit" class="btn btn-danger">Sigueinte</button>
                         </form>
                     </div>  
                     <div class="col-md-12 text-center wow fadeInUp" style="margin-top:20px;">

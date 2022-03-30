@@ -23,7 +23,7 @@ Route::view('turnos', 'turnos')->name('turnos');
 Route::view('consultas', 'consultas')->name('consultas');
 Route::view('requisitos', 'requisitos')->name('requisitos');
 Route::view('formularios', 'formularios')->name('formularios');
-Route::view('generadorTurnos', 'generadorTurnos')->name('generadorTurnos');
+Route::view('salcedo', 'salcedo')->name('salcedo');
 Route::view('quienes-somos','quienes-somos')->name('quienes-somos');
 Route::view('calendarioMatriculacion','calendarioMatriculacion')->name('calendarioMatriculacion');
 Route::view('lotaip', 'lotaip')->name('lotaip');
