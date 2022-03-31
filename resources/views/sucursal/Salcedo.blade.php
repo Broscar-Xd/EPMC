@@ -304,8 +304,8 @@
             <div class="container">
 
                 <ul class="breadcrumb">
-                    <li><a href="http://epmc.gob.ec" title="Inicio">Inicio</a></li>
-                    <li><a href="http://epmc.gob.ec#services" title="Servicios">Servicios</a></li>
+                <li><a href="{{route('home')}}" title="Inicio">Inicio</a></li>
+                    <li><a href="{{route('turnos')}}" title="Servicios">Servicios</a></li>
                     <li>Sistema de emisión de Turnos</li>
                 </ul>
             </div>
@@ -382,7 +382,7 @@
                     <div class="col-md-12 text-center wow fadeInUp" style="margin-top:20px;">
 
                         <div id="message"></div>
-                        <a href="http://epmc.gob.ec/turnos/reimpresion" class="btn btn-primary submit">Reimprimir turno</a>
+                        <a href="" class="btn btn-primary submit">Reimprimir turno</a>
                     </div>
 
 

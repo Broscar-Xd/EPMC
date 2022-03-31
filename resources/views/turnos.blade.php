@@ -309,7 +309,8 @@
                             <input type="hidden" name="_token" value="rI2ZC3fpAxRNxTR6VxMC0Q2vE28e90zGMzFh5kxv">
                             <fieldset>
                                 <select onchange="location =this.value" name="sucursal_id" id="sucursal_id" required class="form-control" required>
-                                    <option value="{{'sucursal.Salcedo'}}">Salcedo</option>
+                                <option value="">Seleccione la sucursal</option>    
+                                <option value="{{'sucursal.Salcedo'}}">Salcedo</option>
                                     <option value="{{'sucursal.Lamana'}}">La Maná</option>
                                     <option value="{{'sucursal.Pujili'}}">Pujilí</option>
                                 </select>
@@ -328,7 +329,7 @@
                         </blockquote>
                         <br>
                         <div id="message"></div>
-                        <a href="http://epmc.gob.ec/turnos/reimpresion" class="btn btn-primary submit">Reimprimir turno</a>
+                        <a href="{{'reimprimirTurno'}}" class="btn btn-primary submit">Reimprimir turno</a>
                     
                     </div>                           
                 </div>

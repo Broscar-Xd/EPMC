@@ -33,3 +33,4 @@ Route::view('Directivo', 'Directivo')->name('Directivo');
 Route::view('Publicaciones', 'Publicaciones')->name('Publicaciones');Route::view('sucursal.Salcedo', 'sucursal.Salcedo')->name('sucursal.Salcedo');
 Route::view('sucursal.Lamana', 'sucursal.Lamana')->name('sucursal.Lamana');
 Route::view('sucursal.Pujili', 'sucursal.Pujili')->name('sucursal.Pujili');
+Route::view('reimprimirTurno', 'reimprimirTurno')->name('reimprimirTurno');
