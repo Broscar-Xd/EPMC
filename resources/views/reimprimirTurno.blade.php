@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
+    <!-- Meta Data -->
     <meta charset="utf-8">
     <link rel="icon" href="../images/descarga.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +11,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>TURNOS | EPMC</title>
+    <title>Inicio | EPMC</title>
     <link rel="shortcut icon" href="http://epmc.gob.ec/front/img/assets/preloader-logo.png" type="image/x-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,20 +38,6 @@
     </script>
 
     <link href="http://epmc.gob.ec/back/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
-    <style type="text/css" media="screen">
-        #message,
-        #info {
-            color: red;
-            font-weight: 700;
-        }
-
-        #placa {
-            text-transform: uppercase;
-        }
-    </style>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
     <!-- Styles -->
     <style>
         .header {
@@ -110,9 +97,7 @@
 
         /*Fin de Estilos para el encabezado*/
 
-        #conta {
-            background-color: #000000;
-        }
+
 
         /*Estilos de footer*/
         #footer {
@@ -165,7 +150,8 @@
     </style>
 </head>
 
-<body class="antialiased">
+<body>
+
     <!-- Start Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -173,6 +159,7 @@
         </div>
     </div>
     <!-- End Preloader -->
+
     <!-- Start Header -->
     <header>
         <div class="px-3 py-2 bg-dark text-white">
@@ -207,8 +194,8 @@
                             </a>
                             <div class="dropdown-content">
                                 <a href="{{route('quienes-somos')}}">Quienes Somos</a>
-                                <a href="">Equipo Administrativo</a>
-                                <a href="">Equipo Directivo</a>
+                                <a href="{{'Administrativo'}}">Equipo Administrativo</a>
+                                <a href="{{'Directivo'}}">Equipo Directivo</a>
                             </div>
                         </li>
                         <li class="dropdown">
@@ -275,29 +262,12 @@
                 </div>
             </div>
         </div>
-    </header><!-- End Header -->
-    <section>
-        <script type="text/javascript">
-            window.addEventListener("scroll", function() {
-                var header = document.querySelector("header");
-                header.classList.toggle("sticky", window.scrollY > 0);
-            })
-        </script>
-    </section>
+    </header> <!-- End Header -->
 
+    <!-- Start Home Revolution Slider Parallax Section -->
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card bg-dark text-white">
-                    <img src="http://epmc.gob.ec/front/img/backgrounds/bg-shortcodes.jpg" class="card-img" alt="..." width="1000" height="200">
-                    <div class="card-img-overlay">
-                        <h1 class="card-title" align="center" style="color:#FFFFFF">Sistema de emición de turnos</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- End Home Revolution Slider Parallax Section -->
+
     <div class="site-wrapper content">
 
         <section id="breadcrumb">
@@ -315,20 +285,21 @@
         <section id="contact">
             <div class="container">
                 <div class="row">
-
-
                     <div class="col-md-12">
-                        <h3 class="section-title wow fadeInUp">Genera tu turno</h3>
-                        <h4 class="text-center"> <small>Sucursal:</small> La Maná</h4>
-                        <p class="text-justify"></p>
+                        <h3 class="section-title wow fadeInUp">Reimpresión de turno</h3>
+                        <p class="text-center">Ingrese los mismos datos con los que generó su turno, para reimprimirlo</p>
                     </div>
                     <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
 
                         <!-- Contact Form will be functional only on your server. Upload to your server when testing. -->
-                        <form method="post" action="http://epmc.gob.ec/sistema-turnos/1">
-                            <input type="hidden" name="_token" value="f5CW4zcxWyxtoh6dedmmVz7HjpScyXyt5B27Otem">
+                        <form method="post" action="#">
+                            <input type="hidden" name="_token" value="4Jzmu3IQcXej2i6SFolIQtbcF202U9I6CjufRJNI">
                             <fieldset>
-                                <input type="hidden" name="sucursal_id" value="1">
+                                <select name="sucursal_id" id="sucursal_id" required class="form-control" required>
+                                    <option value="1">Salcedo</option>
+                                    <option value="2">La Maná</option>
+                                    <option value="3">Pujilí</option>
+                                </select>
                                 <select name="requisito_id" id="requisito_id" required class="form-control">
                                     <option value="12">REVISIÓN VEHÍCULOS PARTICULARES</option>
                                     <option value="13">AUTORIZACIÓN PARA RENOVACIÓN ANUAL DE MATRÍCULA</option>
@@ -349,40 +320,27 @@
                                 <input name="placa" type="text" id="placa" placeholder="Placa" required />
                                 <div id="info-digito" class="text-danger"></div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div id="datepicker" data-date="" class="text-center"></div>
                                         <input type="hidden" name="fecha" id="fecha">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="turno-info">
-                                            <div>Fecha: <strong id="current_date">2022-03-24</strong></div>
-                                            <div>Último turno: <strong id="last_turno">353</strong></div>
-                                            <!-- <div>Turnos generados: <strong id="n_turnos">353</strong></div>-->
-                                            <div>Turnos disponibles: <strong id="turnos_disponibles">0</strong></div>
-                                            <div>Hora: <strong id="last_turno_hora">17:33:36</strong></div>
-                                            <div>Placas terminadas en: <strong id="digito-placa">0,1,2,3,4,5,6,7,8,9</strong></div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <!--<input name="fecha" type="text" id="fecha" placeholder="Fecha para turno" required/>-->
 
                             </fieldset>
-                            <input type="submit" class="submit" id="submit" value="Siguiente" disabled />
+                            <div id="message"></div>
+                            <hr>
+                            <input type="button" class="submit" id="reimprimir" value="Reimprimir turno" />
                         </form>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            Nos permitimos informar a la ciudadanía que los pagos realizados en las diferentes entidades bancarias correspondientes a las tasas de Matriculación y Trasferencia de Domínio serán validados en las próximas 48 horas para realizar los respectivos trámites debido a los nuevos requerimientos del sistema de matriculación vehicular.
-
-                            Recomendamos a nuestros usuarios realizar los pagos corresponientes con 72 horas de anticipación antes de finalizar el mes para evitar inconvenientes.. </i>
-
-                        </div>
-                    </div>
                     <div class="col-md-12 text-center wow fadeInUp" style="margin-top:20px;">
+                        <blockquote>
+                            <i class=" dark-grey">Trabajamos por una movilidad diferente</i>
+                        </blockquote>
+                        <br>
 
-                        <div id="message"></div>
-                        <a href="http://epmc.gob.ec/turnos/reimpresion" class="btn btn-primary submit">Reimprimir turno</a>
+
                     </div>
 
 
@@ -592,8 +550,8 @@
 
                     </div>
                     <!--<div class="col-md-12">
-        <button id="collapse-init" class="btn btn-primary">Abrir todos</button>
-    </div>-->
+                <button id="collapse-init" class="btn btn-primary">Abrir todos</button>
+            </div>-->
                 </div>
             </div>
         </section> <!-- End Formularios Section -->
@@ -605,14 +563,14 @@
                 <div class="counter-row row text-center wow fadeInUp">
                     <div class="col-md-3 col-sm-6 fact-container">
                         <div class="fact">
-                            <span class="counter highlight">587</span>
+                            <span class="counter highlight">589</span>
                             <h4>Turnos diarios</h4>
-                            <p>Para el <span class="highlight">2022-03-24</span></p>
+                            <p>Para el <span class="highlight">2022-03-31</span></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 fact-container">
                         <div class="fact">
-                            <span class="counter highlight">11168</span>
+                            <span class="counter highlight">8015</span>
                             <h4>Turnos generados</h4>
                             <p>Año <span class="highlight">2022</span></p>
                         </div>
@@ -635,6 +593,8 @@
 
             </div>
         </section> <!-- End Fun Facts Section -->
+
+        <!-- Start Footer 1 -->
         <footer>
             <div id="footer">
                 <div class="container">
@@ -642,7 +602,9 @@
                         <div class="col-3">
                             <br>
                             <p style="color:#FFFFFF; font-family: Bebas Neue, cursive;">ÚLTIMAS NOTICIAS</p>
-                            <p style="color:#FF0000; font-family: Bebas Neue, cursive;">CALENDARIO DE MATRICULACIÓN VEHICULAR 2021</p>
+                            <a class="link-dark" href="{{route('calendarioMatriculacion')}}">
+                                <p style="color:#FF0000; font-family: Bebas Neue, cursive;">CALENDARIO DE MATRICULACIÓN VEHICULAR 2021</p>
+                            </a>
                         </div>
                         <div class="col-3">
                             <br>
@@ -702,163 +664,146 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> <!-- End Footer 1 -->
+
         <!-- Start Back To Top -->
         <a id="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
             </svg></a>
         <!-- End Back To Top -->
-        <!-- jQuery -->
-        <script src="http://epmc.gob.ec/front/js/plugins/jquery.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/moderniz.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/smoothscroll.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/revslider.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/bootstrap.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/waypoints.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/parallax.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/easign1.3.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/cubeportfolio.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/owlcarousel.min.js"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBCT_YSl_vNgxGOsCdJvOGlbIe0_9K_MA4&sensor=false&amp;language=es"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/gmap3.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/wow.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/plugins/counterup.min.js"></script>
-        <script src="http://epmc.gob.ec/front/js/scripts.js"></script>
-        <script src="http://epmc.gob.ec/back/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script src="http://epmc.gob.ec/back/assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>
-        <script src="http://epmc.gob.ec/back/assets/plugins/inputmask/jquery.inputmask.min.js" type="text/javascript"></script>
 
-        <script>
-            var placa_valida = false;
-            var cedula_valida = false;
-            var digito_valido = true;
-            var fecha_seteada = false;
+    </div> <!-- End Site Wrapper -->
 
-            $(document).ready(function() {
-                $("#placa").inputmask("aa[a]-999[9|a]");
-                $("#cedula").inputmask("9999999999[999]");
 
-                $('#datepicker').datepicker({
-                    language: 'es',
-                    format: 'yyyy-mm-dd',
-                    weekStart: 1,
-                    startDate: Date('Y-m-d'),
-                    endDate: '2022-03-25',
-                    datesDisabled: ["2022-03-25", "2022-03-24"],
-                    autoclose: true,
-                    todayHighlight: false,
-                });
+    <!-- jQuery -->
+    <script src="http://epmc.gob.ec/front/js/plugins/jquery.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/moderniz.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/smoothscroll.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/revslider.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/bootstrap.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/waypoints.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/parallax.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/easign1.3.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/cubeportfolio.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/owlcarousel.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBCT_YSl_vNgxGOsCdJvOGlbIe0_9K_MA4&sensor=false&amp;language=es"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/gmap3.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/wow.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/plugins/counterup.min.js"></script>
+    <script src="http://epmc.gob.ec/front/js/scripts.js"></script>
+    <script src="http://epmc.gob.ec/back/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="http://epmc.gob.ec/back/assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>
+    <script src="http://epmc.gob.ec/back/assets/plugins/inputmask/jquery.inputmask.min.js" type="text/javascript"></script>
 
-                function validarDigito() {
-                    var placa = $('#placa').val().replace('-', '');
-                    placa = placa.replace('_', '');
-                    var ultimo_digito = placa.slice(-1);
-                    if (ultimo_digito.toLowerCase().match(/[a-z]/i)) {
-                        ultimo_digito = placa.slice(-2, -1);
+    <script>
+        var placa_valida = false;
+        var cedula_valida = false;
+        var digito_valido = true;
+        var fecha_seteada = false;
+
+        $(document).ready(function() {
+            $("#placa").inputmask("aa[a]-999[9|a]");
+            $("#cedula").inputmask("9999999999[999]");
+
+            $('#datepicker').datepicker({
+                language: 'es',
+                format: 'yyyy-mm-dd',
+                weekStart: 1,
+                startDate: Date('Y-m-d'),
+                autoclose: true,
+                todayHighlight: true,
+            });
+
+            function validarDigito() {
+                var placa = $('#placa').val().replace('-', '');
+                placa = placa.replace('_', '');
+                var ultimo_digito = placa.slice(-1);
+                if (ultimo_digito.toLowerCase().match(/[a-z]/i)) {
+                    ultimo_digito = placa.slice(-2, -1);
+                }
+                if ($('#digito-placa').html().includes(ultimo_digito) > 0) {
+                    digito_valido = true;
+                    $('#info-digito').html('');
+                    if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
+                        $('#submit').removeAttr("disabled");
                     }
-                    if ($('#digito-placa').html().includes(ultimo_digito) > 0) {
-                        digito_valido = true;
-                        $('#info-digito').html('');
+                } else {
+                    digito_valido = false;
+                    $('#info-digito').html('En esta fecha solo se pueden generar turnos para placas terminadas en ' + $('#digito-placa').html());
+                    $('#submit').attr("disabled", true);
+                }
+            }
+            $('#placa').on('change', function(data) {
+                var placa = $(this).val().replace('-', '');
+                placa = placa.replace('_', '');
+                $('#submit').val("validando...");
+                var url_consulta = "http://epmc.gob.ec/validar_placa/" + placa;
+                $.get(url_consulta, {}, function(data) {
+                    if (data.mensajeServidor) {
+                        $('#info-placa').html('La placa ingresada es incorrecta o no existe');
+                        $('#submit').attr("disabled", true);
+                        placa_valida = false;
+                    } else {
+                        placa_valida = true;
+                        $('#info-placa').html('');
+                        if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
+                            $('#submit').removeAttr("disabled");
+                        }
+                    }
+                    validarDigito();
+                    $('#submit').val("Siguiente");
+                }, 'json');
+            });
+
+            $('#cedula').on('change', function(data) {
+                var valor = $(this).val();
+                $('#submit').val("validando...");
+                $.get('http://epmc.gob.ec/validar_cedula/' + valor, {}, function(data) {
+                    if (data) {
+                        cedula_valida = true;
+                        $('#info').html('');
                         if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
                             $('#submit').removeAttr("disabled");
                         }
                     } else {
-                        digito_valido = false;
-                        $('#info-digito').html('En esta fecha solo se pueden generar turnos para placas terminadas en ' + $('#digito-placa').html());
+                        cedula_valida = false;
+                        $('#info').html('El número de CI o RUC ingresado es incorrecto');
                         $('#submit').attr("disabled", true);
                     }
-                }
-                $('#placa').on('change', function(data) {
-                    var placa = $(this).val().replace('-', '');
-                    placa = placa.replace('_', '');
-                    $('#submit').val("validando...");
-                    var url_consulta = "http://epmc.gob.ec/validar_placa/" + placa;
-                    $.get(url_consulta, {}, function(data) {
-                        if (data.mensajeServidor) {
-                            $('#info-placa').html('La placa ingresada es incorrecta o no existe');
-                            $('#submit').attr("disabled", true);
-                            placa_valida = false;
-                        } else {
-                            placa_valida = true;
-                            $('#info-placa').html('');
-                            if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
-                                $('#submit').removeAttr("disabled");
-                            }
-                        }
-                        validarDigito();
-                        $('#submit').val("Siguiente");
-                    }, 'json');
-                });
-
-                $('#cedula').on('change', function(data) {
-                    var valor = $(this).val();
-                    $('#submit').val("validando...");
-                    $.get('http://epmc.gob.ec/validar_cedula/' + valor, {}, function(data) {
-                        if (data) {
-                            cedula_valida = true;
-                            $('#info').html('');
-                            if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
-                                $('#submit').removeAttr("disabled");
-                            }
-                        } else {
-                            cedula_valida = false;
-                            $('#info').html('El número de CI o RUC ingresado es incorrecto');
-                            $('#submit').attr("disabled", true);
-                        }
-                        $('#submit').val("Siguiente");
-                    }, 'json');
-                });
-                $('#datepicker').on('changeDate', function() {
-                    fecha_seteada = true;
-                    $('#fecha').val(
-                        $('#datepicker').datepicker('getFormattedDate')
-                    );
-                    $('#current_date').html(
-                        $('#datepicker').datepicker('getFormattedDate')
-                    );
-                    var url = 'http://epmc.gob.ec/stats_calendario/' + $('#datepicker').datepicker('getFormattedDate');
-                    var sucursal_id = '1';
-                    $.get(url, {
-                        'sucursal_id': sucursal_id
-                    }, function(data) {
-                        $('#n_turnos').html(data.n_turnos);
-                        $('#turnos_disponibles').html(data.turnos_disponibles);
-                        $('#digito-placa').html(data.digitos);
-                        if (data.last_turno) {
-                            $('#last_turno').html(data.last_turno.turno);
-                            $('#last_turno_hora').html(data.last_turno.hora);
-                        } else {
-                            $('#last_turno').html(0);
-                            $('#last_turno_hora').html('');
-                        }
-                        validarDigito();
-                        if (placa_valida && cedula_valida && fecha_seteada && digito_valido) {
-                            $('#submit').removeAttr("disabled");
-                        }
-                    }, 'json');
-                });
-
-                $('#reimprimir').on('click', function() {
-                    var placa = $('#placa').val();
-                    var cedula = $('#cedula').val();
-                    var fecha = $('#fecha').val();
-                    $.post('http://epmc.gob.ec/turnos/reimpresion', {
-                        '_token': 'f5CW4zcxWyxtoh6dedmmVz7HjpScyXyt5B27Otem',
-                        'placa': placa,
-                        'cedula': cedula,
-                        'fecha': fecha
-                    }, function(data) {
-                        if (data.existe) {
-                            location.href = "http://epmc.gob.ec/sistema-turnos/" + data.turno;
-                        } else {
-                            $('#message').html(data.msg);
-                        }
-                    }, 'json');
-                });
-
+                    $('#submit').val("Siguiente");
+                }, 'json');
             });
-        </script>
-        <!-- END JAVASCRIPTS -->
+            $('#datepicker').on('changeDate', function() {
+                fecha_seteada = true;
+                $('#fecha').val(
+                    $('#datepicker').datepicker('getFormattedDate')
+                );
+                $('#current_date').html(
+                    $('#datepicker').datepicker('getFormattedDate')
+                );
+            });
+
+            $('#reimprimir').on('click', function() {
+                var placa = $('#placa').val();
+                var cedula = $('#cedula').val();
+                var fecha = $('#fecha').val();
+                $.post('http://epmc.gob.ec/turnos/reimpresion', {
+                    '_token': '4Jzmu3IQcXej2i6SFolIQtbcF202U9I6CjufRJNI',
+                    'placa': placa,
+                    'cedula': cedula,
+                    'fecha': fecha
+                }, function(data) {
+                    if (data.existe) {
+                        location.href = "http://epmc.gob.ec/sistema-turnos/" + data.turno;
+                    } else {
+                        $('#message').html(data.msg);
+                    }
+                }, 'json');
+            });
+
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
 </body>
 
 </html>
