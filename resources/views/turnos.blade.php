@@ -305,19 +305,21 @@
                     <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
                         
                         <!-- Contact Form will be functional only on your server. Upload to your server when testing. -->
-                        <form method="post" action="http://epmc.gob.ec/turnos" >
+                        <form method="post" action="http://epmc.gob.ec/turnos">
                             <input type="hidden" name="_token" value="rI2ZC3fpAxRNxTR6VxMC0Q2vE28e90zGMzFh5kxv">
                             <fieldset>
-                                <select name="sucursal_id" id="sucursal_id" required class="form-control" required>
-                                                                            <option value="1">Salcedo</option>
-                                                                            <option value="2">La Maná</option>
-                                                                            <option value="3">Pujilí</option>
-                                                                    </select>
-                                <div id="info"></div>
-
+                                <select onchange="location =this.value" name="sucursal_id" id="sucursal_id" required class="form-control" required>
+                                    <option value="{{'sucursal.Salcedo'}}">Salcedo</option>
+                                    <option value="{{'sucursal.Lamana'}}">La Maná</option>
+                                    <option value="{{'sucursal.Pujili'}}">Pujilí</option>
+                                </select>
+                                <!-- <div id="info"></div> -->
+    
                             </fieldset>
-                            <!--<input type="submit" class="submit" id="submit" value="Siguiente" />-->
-                            <button type="submit" class="btn btn-danger">Sigueinte</button>
+
+                            <!-- <input type="submit" class="submit" id="submit" value="Siguiente" /> -->
+                            <!-- <a href="submit" class="btn btn-danger"> Siguiente </a> -->
+
                         </form>
                     </div>  
                     <div class="col-md-12 text-center wow fadeInUp" style="margin-top:20px;">
