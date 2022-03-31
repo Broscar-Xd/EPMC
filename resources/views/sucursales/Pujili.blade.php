@@ -858,6 +858,8 @@
 
             });
         </script>
+        
+        <!-- END JAVASCRIPTS -->
 </body>
 
 </html>
