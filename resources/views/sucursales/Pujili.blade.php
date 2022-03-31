@@ -858,6 +858,7 @@
 
             });
         </script>
+        
         <!-- END JAVASCRIPTS -->
 </body>
 
