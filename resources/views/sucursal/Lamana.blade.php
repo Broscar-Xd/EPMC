@@ -319,7 +319,7 @@
 
                     <div class="col-md-12">
                         <h3 class="section-title wow fadeInUp">Genera tu turno</h3>
-                        <h4 class="text-center"> <small>Sucursal:</small> Salcedo</h4>
+                        <h4 class="text-center"> <small>Sucursal:</small> La maná</h4>
                         <p class="text-justify"></p>
                     </div>
                     <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
