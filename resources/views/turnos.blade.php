@@ -309,6 +309,7 @@
                             <input type="hidden" name="_token" value="rI2ZC3fpAxRNxTR6VxMC0Q2vE28e90zGMzFh5kxv">
                             <fieldset>
                                 <select onchange="location =this.value" name="sucursal_id" id="sucursal_id" required class="form-control" required>
+                                    <option value="#"> ---- Seleccione una sucursal ----</option>
                                     <option value="{{'sucursal.Salcedo'}}">Salcedo</option>
                                     <option value="{{'sucursal.Lamana'}}">La Maná</option>
                                     <option value="{{'sucursal.Pujili'}}">Pujilí</option>
