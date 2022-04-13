@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,14 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::view('turnos', 'turnos')->name('turnos');
+Route::get('turnos', function(){
+    return view('home');
+})->middleware('throttle:3');
+
+Route::view('espera', 'espera')->name('espera');
 
 Route::view('nosotros', 'nosotros')->name('nosotros');   
-Route::view('turnos', 'turnos')->name('turnos');
 Route::view('consultas', 'consultas')->name('consultas');
 Route::view('requisitos', 'requisitos')->name('requisitos');
 Route::view('formularios', 'formularios')->name('formularios');
